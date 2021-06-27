@@ -35,9 +35,14 @@ driver.find_element_by_xpath('//*[@id="Col1-1-HistoricalDataTable-Proxy"]/sectio
 
 import pandas as pd
 
-df = pd.read_csv ('algorithms\AAPL.csv')
+df = pd.read_csv ('AAPL.csv')
 
-print(df)
+# print(df)
+df.add
+
+
+returns=[0]
+
 for i in range(1,251):
     prev=df.loc[i-1]
     data=df.loc[i]
@@ -46,5 +51,14 @@ for i in range(1,251):
     today_close=data['Adj Close']
 
     change=((today_close-prev_close)/today_close)*100
-    # print(abs(change))
+
+    data['return']=change
+    returns.append(change)
+
     
+
+df=df.assign(returns=returns)
+
+
+print(df)
+
