@@ -42,7 +42,7 @@ df.add
 
 
 returns=[0]
-
+cumulative=[0]
 for i in range(1,251):
     prev=df.loc[i-1]
     data=df.loc[i]
@@ -54,11 +54,12 @@ for i in range(1,251):
 
     data['return']=change
     returns.append(change)
+    cumulative.append(cumulative[-1]+returns[-1])
 
     
 
 df=df.assign(returns=returns)
-
+df=df.assign(cumulative_returns=cumulative)
 
 print(df)
 
