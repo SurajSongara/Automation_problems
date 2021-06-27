@@ -59,3 +59,12 @@ df=df.assign(cumulative_returns=cumulative)
 
 print(df)
 
+
+
+import matplotlib.pyplot as plt
+
+
+ypoints = df['cumulative_returns']
+
+plt.plot(ypoints, linestyle = 'dotted')
+plt.show()
