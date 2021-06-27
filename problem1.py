@@ -20,7 +20,7 @@ import time
 
 
 
-'''
+
 
 driver=webdriver.Chrome()
 url='https://in.finance.yahoo.com/quote/AAPL?ltr=1'
@@ -30,16 +30,12 @@ driver.get(url)
 driver.find_element_by_xpath('//*[@id="quote-nav"]/ul/li[5]/a').click()
 
 time.sleep(3)
-driver.find_element_by_xpath('//*[@id="Col1-1-HistoricalDataTable-Proxy"]/section/div[1]/div[2]/span[2]/a').click()'''
+driver.find_element_by_xpath('//*[@id="Col1-1-HistoricalDataTable-Proxy"]/section/div[1]/div[2]/span[2]/a').click()
 
 
 import pandas as pd
 
 df = pd.read_csv ('AAPL.csv')
-
-# print(df)
-df.add
-
 
 returns=[0]
 cumulative=[0]
